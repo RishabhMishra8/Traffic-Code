@@ -1,0 +1,72 @@
+//FINAL CODE 
+int ir1 = 2;
+int ir2 = 7;
+int ir3 = 8;
+int x,y,z;
+int red = 13;
+int green = 12;
+int yellow = 4;
+ void setup(){
+  Serial.begin(9600);
+  pinMode(2,INPUT);
+  pinMode(7,INPUT);
+  pinMode(8,INPUT);
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(4,OUTPUT);
+  
+
+
+ }
+ void loop(){
+  x = digitalRead(ir1);
+  y = digitalRead(ir2);
+  z = digitalRead(ir3);
+  Serial.println(x);
+  Serial.println(y);
+  Serial.println(z);
+  if(z==0 && x==0 && y==0){
+    digitalWrite(red,HIGH);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,LOW);
+    delay(5000);
+    digitalWrite(red,LOW);
+    digitalWrite(yellow,HIGH);
+    delay(2000);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,HIGH);
+    delay(15000);
+    digitalWrite(green,LOW);
+  
+  }
+  else if(y==0 && x==0){
+    digitalWrite(red,HIGH);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,LOW);
+    delay(10000);
+    digitalWrite(red,LOW);
+    digitalWrite(yellow,HIGH);
+    delay(2000);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,HIGH);
+    delay(10000);
+    digitalWrite(green,LOW);
+  }
+  else if(x==0 ){
+  digitalWrite(red,HIGH);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,LOW);
+    delay(15000);
+    digitalWrite(red,LOW);
+    digitalWrite(yellow,HIGH);
+    delay(2000);
+    digitalWrite(yellow,LOW);
+    digitalWrite(green,HIGH);
+    delay(5000);
+    digitalWrite(green,LOW);
+  }
+
+  
+
+ }
+
